@@ -26,3 +26,18 @@ endif()
 add_executable(ArrayTests ArrayTests.cpp)
 target_link_libraries(ArrayTests LeetCodeLib GTest::gtest_main)
 add_test(NAME ArrayTests COMMAND ArrayTests)
+
+# StringProblems Tests
+add_executable(StringTests StringTests.cpp)
+target_link_libraries(StringTests LeetCodeLib GTest::gtest_main)
+add_test(NAME StringTests COMMAND StringTests)
+
+# LinkedListProblems Tests
+add_executable(LinkedListTests LinkedListTests.cpp)
+target_link_libraries(LinkedListTests LeetCodeLib GTest::gtest_main)
+add_test(NAME LinkedListTests COMMAND LinkedListTests)
+
+# TreeProblems Tests
+add_executable(TreeTests TreeTests.cpp)
+target_link_libraries(TreeTests LeetCodeLib GTest::gtest_main)
+add_test(NAME TreeTests COMMAND TreeTests)

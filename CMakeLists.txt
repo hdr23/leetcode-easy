@@ -10,6 +10,8 @@ include_directories(include)
 set(SOURCES
     src/ArrayProblems.cpp
     src/StringProblems.cpp
+    src/LinkedListProblems.cpp
+    src/TreeProblems.cpp
 )
 
 # Create the library
