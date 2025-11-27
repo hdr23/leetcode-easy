@@ -1,10 +1,10 @@
-#include "Strings.h"
+#include "StringProblems.h"
 #include <algorithm>
 #include <cctype>
 #include <climits>
 #include <unordered_map>
 
-void Strings::reverseString(std::vector<char>& s) {
+void StringProblems::reverseString(std::vector<char>& s) {
     int left = 0;
     int right = s.size() - 1;
     while (left < right) {
@@ -14,7 +14,7 @@ void Strings::reverseString(std::vector<char>& s) {
     }
 }
 
-int Strings::reverse(int x) {
+int StringProblems::reverse(int x) {
     int reversed = 0;
     while (x != 0) {
         int digit = x % 10;
@@ -33,7 +33,7 @@ int Strings::reverse(int x) {
     return reversed;
 }
 
-int Strings::firstUniqChar(std::string s) {
+int StringProblems::firstUniqChar(std::string s) {
     int count[26] = {0};
     
     // Count frequency of each character
@@ -51,7 +51,7 @@ int Strings::firstUniqChar(std::string s) {
     return -1;
 }
 
-bool Strings::isAnagram(std::string s, std::string t) {
+bool StringProblems::isAnagram(std::string s, std::string t) {
     if (s.length() != t.length()) {
         return false;
     }
@@ -74,7 +74,7 @@ bool Strings::isAnagram(std::string s, std::string t) {
     return true;
 }
 
-bool Strings::isPalindrome(std::string s) {
+bool StringProblems::isPalindrome(std::string s) {
     int left = 0;
     int right = s.length() - 1;
     
@@ -100,7 +100,7 @@ bool Strings::isPalindrome(std::string s) {
     return true;
 }
 
-int Strings::myAtoi(std::string s) {
+int StringProblems::myAtoi(std::string s) {
     int i = 0;
     int n = s.length();
     
@@ -137,7 +137,7 @@ int Strings::myAtoi(std::string s) {
     return sign * result;
 }
 
-int Strings::strStr(std::string haystack, std::string needle) {
+int StringProblems::strStr(std::string haystack, std::string needle) {
     if (needle.empty()) {
         return 0;
     }
@@ -162,7 +162,7 @@ int Strings::strStr(std::string haystack, std::string needle) {
     return -1;
 }
 
-std::string Strings::longestCommonPrefix(std::vector<std::string>& strs) {
+std::string StringProblems::longestCommonPrefix(std::vector<std::string>& strs) {
     if (strs.empty()) {
         return "";
     }
@@ -186,4 +186,5 @@ std::string Strings::longestCommonPrefix(std::vector<std::string>& strs) {
     
     return prefix;
 }
+
 

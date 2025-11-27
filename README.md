@@ -40,13 +40,15 @@ cmake --build .
 ```
 leetcode-easy/
 ├── include/          # Header files
-│   ├── Arrays.h      # Array problem declarations
+│   ├── ArrayProblems.h      # Array problem declarations
+│   ├── StringProblems.h     # String problem declarations
 │   └── SharedStructs.h
 ├── src/              # Implementation files
-│   ├── Arrays.cpp    # Array problem implementations
+│   ├── ArrayProblems.cpp    # Array problem implementations
+│   ├── StringProblems.cpp   # String problem implementations
 │   └── main.cpp      # Sandbox for quick testing
 ├── tests/            # Unit tests
-│   └── ArraysTests.cpp
+│   └── ArrayTests.cpp
 ├── build/            # Build directory (generated, gitignored)
 ├── CMakeLists.txt    # Main CMake configuration
 └── build.sh          # Build script
@@ -65,7 +67,7 @@ Or run tests directly:
 
 ```bash
 cd build
-./tests/ArraysTests
+./tests/ArrayTests
 ```
 
 ## Using the Sandbox
@@ -79,11 +81,11 @@ cd build
 
 ## Development
 
-### Adding New Problems (Example: Arrays)
+### Adding New Problems (Example: ArrayProblems)
 
-1. Add function declaration to `include/Arrays.h`
-2. Add implementation to `src/Arrays.cpp`
-3. Add tests to `tests/ArraysTests.cpp`
+1. Add function declaration to `include/ArrayProblems.h`
+2. Add implementation to `src/ArrayProblems.cpp`
+3. Add tests to `tests/ArrayTests.cpp`
 4. Rebuild and run tests
 
 ### Running Individual Tests
@@ -92,7 +94,7 @@ You can filter tests when using CTest:
 
 ```bash
 cd build
-ctest -R ArraysTests
+ctest -R ArrayTests
 ```
 
 ## License

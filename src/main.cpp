@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Arrays.h"
+#include "ArrayProblems.h"
 
 int main() {
     std::cout << "--- Debugging Sandbox ---" << std::endl;
@@ -10,7 +10,7 @@ int main() {
     int target = 9;
     
     // Call the function from your library
-    std::vector<int> result = Arrays::twoSum(nums, target);
+    std::vector<int> result = ArrayProblems::twoSum(nums, target);
 
     if (!result.empty()) {
         std::cout << "Indices: " << result[0] << ", " << result[1] << std::endl;

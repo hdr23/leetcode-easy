@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-class Strings {
+class StringProblems {
 public:
     /**
      * @brief Reverse a string in-place
@@ -100,4 +100,5 @@ public:
      */
     static std::string longestCommonPrefix(std::vector<std::string>& strs);
 };
+
 

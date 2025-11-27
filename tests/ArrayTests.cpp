@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include <strings.h>
 #include <gtest/gtest.h>
 #include "ArrayProblems.h"

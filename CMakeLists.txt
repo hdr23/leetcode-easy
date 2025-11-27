@@ -8,8 +8,8 @@ include_directories(include)
 
 # Source files
 set(SOURCES
-    src/Arrays.cpp
-    src/Strings.cpp
+    src/ArrayProblems.cpp
+    src/StringProblems.cpp
 )
 
 # Create the library
