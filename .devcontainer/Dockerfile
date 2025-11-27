@@ -8,4 +8,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     build-essential \
     gdb \
     git \
+    doxygen \
+    graphviz \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*

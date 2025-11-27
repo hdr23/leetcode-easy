@@ -53,3 +53,6 @@ coverage/
 *.idb
 *.pdb
 
+# Documentation
+docs/
+
