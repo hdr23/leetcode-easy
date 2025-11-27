@@ -1,0 +1,189 @@
+#include "Strings.h"
+#include <algorithm>
+#include <cctype>
+#include <climits>
+#include <unordered_map>
+
+void Strings::reverseString(std::vector<char>& s) {
+    int left = 0;
+    int right = s.size() - 1;
+    while (left < right) {
+        std::swap(s[left], s[right]);
+        left++;
+        right--;
+    }
+}
+
+int Strings::reverse(int x) {
+    int reversed = 0;
+    while (x != 0) {
+        int digit = x % 10;
+        x /= 10;
+        
+        // Check for overflow before multiplying
+        if (reversed > INT_MAX / 10 || (reversed == INT_MAX / 10 && digit > 7)) {
+            return 0;
+        }
+        if (reversed < INT_MIN / 10 || (reversed == INT_MIN / 10 && digit < -8)) {
+            return 0;
+        }
+        
+        reversed = reversed * 10 + digit;
+    }
+    return reversed;
+}
+
+int Strings::firstUniqChar(std::string s) {
+    int count[26] = {0};
+    
+    // Count frequency of each character
+    for (char c : s) {
+        count[c - 'a']++;
+    }
+    
+    // Find first character with count 1
+    for (int i = 0; i < s.length(); ++i) {
+        if (count[s[i] - 'a'] == 1) {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+bool Strings::isAnagram(std::string s, std::string t) {
+    if (s.length() != t.length()) {
+        return false;
+    }
+    
+    int count[26] = {0};
+    
+    // Count characters in s
+    for (char c : s) {
+        count[c - 'a']++;
+    }
+    
+    // Decrement count for characters in t
+    for (char c : t) {
+        count[c - 'a']--;
+        if (count[c - 'a'] < 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+bool Strings::isPalindrome(std::string s) {
+    int left = 0;
+    int right = s.length() - 1;
+    
+    while (left < right) {
+        // Skip non-alphanumeric characters from left
+        while (left < right && !std::isalnum(s[left])) {
+            left++;
+        }
+        // Skip non-alphanumeric characters from right
+        while (left < right && !std::isalnum(s[right])) {
+            right--;
+        }
+        
+        // Compare characters (case-insensitive)
+        if (std::tolower(s[left]) != std::tolower(s[right])) {
+            return false;
+        }
+        
+        left++;
+        right--;
+    }
+    
+    return true;
+}
+
+int Strings::myAtoi(std::string s) {
+    int i = 0;
+    int n = s.length();
+    
+    // Skip leading whitespace
+    while (i < n && s[i] == ' ') {
+        i++;
+    }
+    
+    if (i >= n) {
+        return 0;
+    }
+    
+    // Determine sign
+    int sign = 1;
+    if (s[i] == '+' || s[i] == '-') {
+        sign = (s[i] == '-') ? -1 : 1;
+        i++;
+    }
+    
+    // Convert digits
+    int result = 0;
+    while (i < n && std::isdigit(s[i])) {
+        int digit = s[i] - '0';
+        
+        // Check for overflow before multiplying
+        if (result > INT_MAX / 10 || (result == INT_MAX / 10 && digit > 7)) {
+            return (sign == 1) ? INT_MAX : INT_MIN;
+        }
+        
+        result = result * 10 + digit;
+        i++;
+    }
+    
+    return sign * result;
+}
+
+int Strings::strStr(std::string haystack, std::string needle) {
+    if (needle.empty()) {
+        return 0;
+    }
+    
+    int haystackLen = haystack.length();
+    int needleLen = needle.length();
+    
+    if (needleLen > haystackLen) {
+        return -1;
+    }
+    
+    for (int i = 0; i <= haystackLen - needleLen; ++i) {
+        int j = 0;
+        while (j < needleLen && haystack[i + j] == needle[j]) {
+            j++;
+        }
+        if (j == needleLen) {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+std::string Strings::longestCommonPrefix(std::vector<std::string>& strs) {
+    if (strs.empty()) {
+        return "";
+    }
+    
+    // Use first string as reference
+    std::string prefix = strs[0];
+    
+    for (int i = 1; i < strs.size(); ++i) {
+        // Compare current prefix with each string
+        int j = 0;
+        while (j < prefix.length() && j < strs[i].length() && prefix[j] == strs[i][j]) {
+            j++;
+        }
+        prefix = prefix.substr(0, j);
+        
+        // Early exit if prefix becomes empty
+        if (prefix.empty()) {
+            return "";
+        }
+    }
+    
+    return prefix;
+}
+

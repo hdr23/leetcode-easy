@@ -9,6 +9,7 @@ include_directories(include)
 # Source files
 set(SOURCES
     src/Arrays.cpp
+    src/Strings.cpp
 )
 
 # Create the library
