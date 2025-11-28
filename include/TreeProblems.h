@@ -12,6 +12,8 @@ public:
      * @param root Root of the binary tree
      * @return Maximum depth of the tree
      * @complexity Time: O(n), Space: O(h) where h is the height of the tree
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/maximum-depth-of-binary-tree/
      */
     static int maxDepth(TreeNode* root);
 
@@ -24,6 +26,8 @@ public:
      * @param q Root of the second tree
      * @return true if trees are the same, false otherwise
      * @complexity Time: O(n), Space: O(h) where h is the height of the tree
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/same-tree/
      */
     static bool isSameTree(TreeNode* p, TreeNode* q);
 
@@ -35,6 +39,8 @@ public:
      * @param root Root of the binary tree
      * @return Root of the inverted tree
      * @complexity Time: O(n), Space: O(h) where h is the height of the tree
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/invert-binary-tree/
      */
     static TreeNode* invertTree(TreeNode* root);
 
@@ -46,6 +52,8 @@ public:
      * @param root Root of the binary tree
      * @return true if tree is symmetric, false otherwise
      * @complexity Time: O(n), Space: O(h) where h is the height of the tree
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/symmetric-tree/
      */
     static bool isSymmetric(TreeNode* root);
 
@@ -57,6 +65,8 @@ public:
      * @param nums Sorted array of integers
      * @return Root of the constructed BST
      * @complexity Time: O(n), Space: O(n) for the tree, O(log n) for recursion
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
      */
     static TreeNode* sortedArrayToBST(std::vector<int>& nums);
 
@@ -70,6 +80,8 @@ public:
      * @param targetSum Target sum to find
      * @return true if such path exists, false otherwise
      * @complexity Time: O(n), Space: O(h) where h is the height of the tree
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/path-sum/
      */
     static bool hasPathSum(TreeNode* root, int targetSum);
 
@@ -84,6 +96,8 @@ public:
      * @param q Second node
      * @return Pointer to the LCA node
      * @complexity Time: O(h), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
      */
     static TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
 };

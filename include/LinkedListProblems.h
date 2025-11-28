@@ -11,6 +11,8 @@ public:
      * 
      * @param node The node to delete (modified in-place)
      * @complexity Time: O(1), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/delete-node-in-a-linked-list/
      */
     static void deleteNode(ListNode* node);
 
@@ -23,6 +25,8 @@ public:
      * @param n Position from the end (1-indexed)
      * @return Head of the modified list
      * @complexity Time: O(L) where L is the length of the list, Space: O(1)
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/remove-nth-node-from-end-of-list/
      */
     static ListNode* removeNthFromEnd(ListNode* head, int n);
 
@@ -34,6 +38,8 @@ public:
      * @param head Head of the linked list
      * @return Head of the reversed list
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/reverse-linked-list/
      */
     static ListNode* reverseList(ListNode* head);
 
@@ -47,6 +53,8 @@ public:
      * @param list2 Head of the second sorted list
      * @return Head of the merged sorted list
      * @complexity Time: O(n + m), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/merge-two-sorted-lists/
      */
     static ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
@@ -58,6 +66,8 @@ public:
      * @param head Head of the linked list
      * @return true if the list is a palindrome, false otherwise
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/palindrome-linked-list/
      */
     static bool isPalindrome(ListNode* head);
 
@@ -69,6 +79,8 @@ public:
      * @param head Head of the linked list
      * @return true if there is a cycle, false otherwise
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/linked-list-cycle/
      */
     static bool hasCycle(ListNode* head);
 };

@@ -7,21 +7,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Ensure POSIX functions like strcasecmp are available for googletest
-# Apply to all googletest targets
-if(TARGET gtest)
-    target_compile_definitions(gtest PRIVATE _GNU_SOURCE)
-endif()
-if(TARGET gtest_main)
-    target_compile_definitions(gtest_main PRIVATE _GNU_SOURCE)
-endif()
-if(TARGET gmock)
-    target_compile_definitions(gmock PRIVATE _GNU_SOURCE)
-endif()
-if(TARGET gmock_main)
-    target_compile_definitions(gmock_main PRIVATE _GNU_SOURCE)
-endif()
-
 # ArrayProblems Tests
 add_executable(ArrayTests ArrayTests.cpp)
 target_link_libraries(ArrayTests LeetCodeLib GTest::gtest_main)

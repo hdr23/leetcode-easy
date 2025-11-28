@@ -187,4 +187,75 @@ std::string StringProblems::longestCommonPrefix(std::vector<std::string>& strs) 
     return prefix;
 }
 
+int StringProblems::lengthOfLongestSubstring(std::string s) {
+    std::unordered_map<char, int> charIndex;
+    int maxLength = 0;
+    int start = 0;
+    
+    for (int end = 0; end < s.length(); ++end) {
+        // If character is seen before and is within current window
+        if (charIndex.count(s[end]) && charIndex[s[end]] >= start) {
+            start = charIndex[s[end]] + 1;
+        }
+        
+        charIndex[s[end]] = end;
+        maxLength = std::max(maxLength, end - start + 1);
+    }
+    
+    return maxLength;
+}
+
+std::vector<std::vector<std::string>> StringProblems::groupAnagrams(std::vector<std::string>& strs) {
+    std::unordered_map<std::string, std::vector<std::string>> groups;
+    
+    for (const std::string& str : strs) {
+        std::string key = str;
+        std::sort(key.begin(), key.end());
+        groups[key].push_back(str);
+    }
+    
+    std::vector<std::vector<std::string>> result;
+    for (auto& pair : groups) {
+        result.push_back(pair.second);
+    }
+    
+    return result;
+}
+
+namespace {
+    // Helper function to expand around center for palindrome
+    int expandAroundCenter(const std::string& s, int left, int right) {
+        while (left >= 0 && right < s.length() && s[left] == s[right]) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+}
+
+std::string StringProblems::longestPalindrome(std::string s) {
+    if (s.empty()) {
+        return "";
+    }
+    
+    int start = 0;
+    int maxLength = 1;
+    
+    for (int i = 0; i < s.length(); ++i) {
+        // Check for odd-length palindromes (center at i)
+        int len1 = expandAroundCenter(s, i, i);
+        // Check for even-length palindromes (center between i and i+1)
+        int len2 = expandAroundCenter(s, i, i + 1);
+        
+        int len = std::max(len1, len2);
+        
+        if (len > maxLength) {
+            maxLength = len;
+            start = i - (len - 1) / 2;
+        }
+    }
+    
+    return s.substr(start, maxLength);
+}
+
 

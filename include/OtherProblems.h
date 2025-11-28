@@ -13,6 +13,8 @@ public:
      * @param n Unsigned integer
      * @return Number of 1 bits
      * @complexity Time: O(1) - at most 32 iterations, Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/number-of-1-bits/
      */
     static int hammingWeight(uint32_t n);
 
@@ -24,6 +26,8 @@ public:
      * @param n Unsigned 32-bit integer
      * @return Integer with reversed bits
      * @complexity Time: O(1) - 32 iterations, Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/reverse-bits/
      */
     static uint32_t reverseBits(uint32_t n);
 
@@ -36,6 +40,8 @@ public:
      * @param nums Array containing n distinct numbers from [0, n]
      * @return The missing number
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/missing-number/
      */
     static int missingNumber(std::vector<int>& nums);
 
@@ -50,6 +56,8 @@ public:
      * @param s String containing only parentheses characters
      * @return true if valid, false otherwise
      * @complexity Time: O(n), Space: O(n)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/valid-parentheses/
      */
     static bool isValid(std::string s);
 
@@ -63,6 +71,8 @@ public:
      * @param n Number of steps
      * @return Number of distinct ways to climb
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/climbing-stairs/
      */
     static int climbStairs(int n);
 };

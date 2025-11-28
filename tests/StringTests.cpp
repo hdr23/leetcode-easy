@@ -95,3 +95,42 @@ TEST(StringTests, LongestCommonPrefix) {
     EXPECT_EQ(StringProblems::longestCommonPrefix(strs6), "a");
 }
 
+// 9. Longest Substring Without Repeating Characters
+TEST(StringTests, LengthOfLongestSubstring) {
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring("abcabcbb"), 3); // "abc"
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring("bbbbb"), 1); // "b"
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring("pwwkew"), 3); // "wke"
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring(""), 0);
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring(" "), 1);
+    EXPECT_EQ(StringProblems::lengthOfLongestSubstring("dvdf"), 3); // "vdf"
+}
+
+// 10. Group Anagrams
+TEST(StringTests, GroupAnagrams) {
+    std::vector<std::string> strs1 = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    std::vector<std::vector<std::string>> result1 = StringProblems::groupAnagrams(strs1);
+    EXPECT_EQ(result1.size(), 3); // Should have 3 groups
+    
+    std::vector<std::string> strs2 = {""};
+    std::vector<std::vector<std::string>> result2 = StringProblems::groupAnagrams(strs2);
+    EXPECT_EQ(result2.size(), 1);
+    EXPECT_EQ(result2[0].size(), 1);
+    
+    std::vector<std::string> strs3 = {"a"};
+    std::vector<std::vector<std::string>> result3 = StringProblems::groupAnagrams(strs3);
+    EXPECT_EQ(result3.size(), 1);
+    EXPECT_EQ(result3[0].size(), 1);
+}
+
+// 11. Longest Palindromic Substring
+TEST(StringTests, LongestPalindrome) {
+    std::string result1 = StringProblems::longestPalindrome("babad");
+    EXPECT_TRUE(result1 == "bab" || result1 == "aba");
+    
+    EXPECT_EQ(StringProblems::longestPalindrome("cbbd"), "bb");
+    EXPECT_EQ(StringProblems::longestPalindrome("a"), "a");
+    EXPECT_EQ(StringProblems::longestPalindrome("ac"), "a");
+    EXPECT_EQ(StringProblems::longestPalindrome("racecar"), "racecar");
+    EXPECT_EQ(StringProblems::longestPalindrome(""), "");
+}
+

@@ -13,6 +13,8 @@ public:
      * @param nums Sorted array of integers (modified in-place)
      * @return Number of unique elements
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/remove-duplicates-from-sorted-array/
      */
     static int removeDuplicates(std::vector<int>& nums);
 
@@ -25,6 +27,8 @@ public:
      * @param prices Array of stock prices for each day
      * @return Maximum profit achievable
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
      */
     static int maxProfit(std::vector<int>& prices);
 
@@ -36,6 +40,8 @@ public:
      * @param nums Array to rotate (modified in-place)
      * @param k Number of steps to rotate right
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/rotate-array/
      */
     static void rotate(std::vector<int>& nums, int k);
 
@@ -47,6 +53,8 @@ public:
      * @param nums Array of integers to check
      * @return true if duplicates exist, false otherwise
      * @complexity Time: O(n), Space: O(n)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/contains-duplicate/
      */
     static bool containsDuplicate(std::vector<int>& nums);
 
@@ -59,6 +67,8 @@ public:
      * @param nums Array where all elements appear twice except one
      * @return The single number that appears only once
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/single-number/
      */
     static int singleNumber(std::vector<int>& nums);
 
@@ -72,6 +82,8 @@ public:
      * @param nums2 Second array
      * @return Vector containing the intersection elements
      * @complexity Time: O(n + m), Space: O(min(n, m))
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/intersection-of-two-arrays-ii/
      */
     static std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2);
 
@@ -84,6 +96,8 @@ public:
      * @param digits Array representing a large integer (modified in-place)
      * @return Array representing the incremented integer
      * @complexity Time: O(n), Space: O(1) average, O(n) worst case (when carry propagates)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/plus-one/
      */
     static std::vector<int> plusOne(std::vector<int>& digits);
 
@@ -95,6 +109,8 @@ public:
      * 
      * @param nums Array to modify (modified in-place)
      * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/move-zeroes/
      */
     static void moveZeroes(std::vector<int>& nums);
 
@@ -108,6 +124,8 @@ public:
      * @param target Target sum
      * @return Vector containing the two indices [i, j] where nums[i] + nums[j] == target
      * @complexity Time: O(n), Space: O(n)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/two-sum/
      */
     static std::vector<int> twoSum(std::vector<int>& nums, int target);
 
@@ -120,6 +138,8 @@ public:
      * @param board 9x9 Sudoku board ('.' represents empty cell)
      * @return true if board is valid, false otherwise
      * @complexity Time: O(1) - fixed 81 cells, Space: O(1) - fixed size arrays
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/valid-sudoku/
      */
     static bool isValidSudoku(std::vector<std::vector<char>>& board);
 
@@ -131,7 +151,66 @@ public:
      * 
      * @param matrix n x n matrix to rotate (modified in-place)
      * @complexity Time: O(n²), Space: O(1)
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/rotate-image/
      */
     static void rotateImage(std::vector<std::vector<int>>& matrix);
+
+    /**
+     * @brief Find maximum sum of contiguous subarray (Kadane's algorithm)
+     * 
+     * Finds the contiguous subarray (containing at least one number) which has
+     * the largest sum and returns its sum.
+     * 
+     * @param nums Array of integers
+     * @return Maximum sum of contiguous subarray
+     * @complexity Time: O(n), Space: O(1)
+     * @difficulty Easy
+     * @see https://leetcode.com/problems/maximum-subarray/
+     */
+    static int maxSubArray(std::vector<int>& nums);
+
+    /**
+     * @brief Product of array except self
+     * 
+     * Returns an array answer such that answer[i] is equal to the product of
+     * all the elements of nums except nums[i]. Must run in O(n) time and
+     * without using division operator.
+     * 
+     * @param nums Array of integers
+     * @return Array where each element is product of all other elements
+     * @complexity Time: O(n), Space: O(1) excluding output array
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/product-of-array-except-self/
+     */
+    static std::vector<int> productExceptSelf(std::vector<int>& nums);
+
+    /**
+     * @brief Find all unique triplets that sum to zero
+     * 
+     * Finds all unique triplets in the array which gives the sum of zero.
+     * The solution set must not contain duplicate triplets.
+     * 
+     * @param nums Array of integers
+     * @return Vector of vectors containing unique triplets [a, b, c] where a + b + c = 0
+     * @complexity Time: O(n²), Space: O(1) excluding output
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/3sum/
+     */
+    static std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
+
+    /**
+     * @brief Container with most water
+     * 
+     * Finds two lines that together with the x-axis forms a container, such
+     * that the container contains the most water. Returns the maximum area.
+     * 
+     * @param height Array where height[i] is the height of the i-th line
+     * @return Maximum area of water that can be contained
+     * @complexity Time: O(n), Space: O(1)
+     * @difficulty Medium
+     * @see https://leetcode.com/problems/container-with-most-water/
+     */
+    static int maxArea(std::vector<int>& height);
 };
 

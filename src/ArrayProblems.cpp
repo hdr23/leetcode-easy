@@ -139,3 +139,104 @@ void ArrayProblems::rotateImage(std::vector<std::vector<int>>& matrix) {
     }
 }
 
+int ArrayProblems::maxSubArray(std::vector<int>& nums) {
+    int maxSum = nums[0];
+    int currentSum = nums[0];
+    
+    for (size_t i = 1; i < nums.size(); ++i) {
+        // Either extend the previous subarray or start a new one
+        currentSum = std::max(nums[i], currentSum + nums[i]);
+        maxSum = std::max(maxSum, currentSum);
+    }
+    
+    return maxSum;
+}
+
+std::vector<int> ArrayProblems::productExceptSelf(std::vector<int>& nums) {
+    int n = nums.size();
+    std::vector<int> result(n, 1);
+    
+    // First pass: calculate left products
+    for (int i = 1; i < n; ++i) {
+        result[i] = result[i - 1] * nums[i - 1];
+    }
+    
+    // Second pass: multiply by right products
+    int rightProduct = 1;
+    for (int i = n - 1; i >= 0; --i) {
+        result[i] *= rightProduct;
+        rightProduct *= nums[i];
+    }
+    
+    return result;
+}
+
+std::vector<std::vector<int>> ArrayProblems::threeSum(std::vector<int>& nums) {
+    std::vector<std::vector<int>> result;
+    int n = nums.size();
+    
+    if (n < 3) {
+        return result;
+    }
+    
+    // Sort the array
+    std::sort(nums.begin(), nums.end());
+    
+    for (int i = 0; i < n - 2; ++i) {
+        // Skip duplicates for the first number
+        if (i > 0 && nums[i] == nums[i - 1]) {
+            continue;
+        }
+        
+        int left = i + 1;
+        int right = n - 1;
+        
+        while (left < right) {
+            int sum = nums[i] + nums[left] + nums[right];
+            
+            if (sum == 0) {
+                result.push_back({nums[i], nums[left], nums[right]});
+                
+                // Skip duplicates for the second number
+                while (left < right && nums[left] == nums[left + 1]) {
+                    left++;
+                }
+                // Skip duplicates for the third number
+                while (left < right && nums[right] == nums[right - 1]) {
+                    right--;
+                }
+                
+                left++;
+                right--;
+            } else if (sum < 0) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+    
+    return result;
+}
+
+int ArrayProblems::maxArea(std::vector<int>& height) {
+    int maxArea = 0;
+    int left = 0;
+    int right = height.size() - 1;
+    
+    while (left < right) {
+        int width = right - left;
+        int currentArea = std::min(height[left], height[right]) * width;
+        maxArea = std::max(maxArea, currentArea);
+        
+        // Move the pointer with smaller height
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    
+    return maxArea;
+}
+
