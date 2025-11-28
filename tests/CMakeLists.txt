@@ -41,3 +41,8 @@ add_test(NAME LinkedListTests COMMAND LinkedListTests)
 add_executable(TreeTests TreeTests.cpp)
 target_link_libraries(TreeTests LeetCodeLib GTest::gtest_main)
 add_test(NAME TreeTests COMMAND TreeTests)
+
+# OtherProblems Tests
+add_executable(OtherTests OtherTests.cpp)
+target_link_libraries(OtherTests LeetCodeLib GTest::gtest_main)
+add_test(NAME OtherTests COMMAND OtherTests)

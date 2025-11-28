@@ -12,6 +12,7 @@ set(SOURCES
     src/StringProblems.cpp
     src/LinkedListProblems.cpp
     src/TreeProblems.cpp
+    src/OtherProblems.cpp
 )
 
 # Create the library
