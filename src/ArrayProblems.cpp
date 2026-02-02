@@ -4,15 +4,9 @@
 #include <algorithm>
 
 int ArrayProblems::removeDuplicates(std::vector<int>& nums) {
-    if (nums.empty()) return 0;
-    int k = 1;
-    for (int i = 1; i < nums.size(); ++i) {
-        if (nums[i] != nums[i - 1]) {
-            nums[k] = nums[i];
-            k++;
-        }
-    }
-    return k;
+    auto it = std::unique(nums.begin(), nums.end());
+    nums.erase(it, nums.end());
+    return nums.size();
 }
 
 int ArrayProblems::maxProfit(std::vector<int>& prices) {
@@ -43,11 +37,14 @@ bool ArrayProblems::containsDuplicate(std::vector<int>& nums) {
 }
 
 int ArrayProblems::singleNumber(std::vector<int>& nums) {
-    int result = 0;
+    std::unordered_map<int, int> countMap;
     for (int num : nums) {
-        result ^= num;
+        countMap[num]++;
     }
-    return result;
+    for (const auto& p : countMap) {
+        if (p.second == 1) return p.first;
+    }
+    return -1; // Should not reach here if input is valid
 }
 
 std::vector<int> ArrayProblems::intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
