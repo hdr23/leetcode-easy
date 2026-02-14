@@ -6,7 +6,7 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "ms-vscode.cpptools",
+          "anysphere.cpptools",
           "ms-vscode.cmake-tools",
           "twxs.cmake"
         ]
